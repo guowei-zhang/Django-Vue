@@ -1,0 +1,188 @@
+body, html {
+    width: 100%;
+    height: 100%;
+    background-color: #f6f8f9;
+    font-size: 12px;
+}
+.showDom{
+	display: block;
+}
+
+.hideDom{
+	display: none;
+}
+
+#app{
+	height: 100%;
+}
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+}
+
+/* 侧边主菜单导航*/
+.aminui {
+	height: 100%;
+	width: 100%;
+    display: flex;
+    flex-flow: column;
+}
+.aminui-wrapper {
+    display: flex;
+    flex: 1;
+    overflow: auto;
+}
+
+.aminui-side-split {
+    width: 65px;
+    flex-shrink: 0;
+    background: #222b45;
+}
+.adminui-side-split-scroll {
+    overflow: auto;
+    overflow-x: hidden;
+    height: 100%;
+	font-size: 12px;
+}
+.el-scrollbar {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    --el-scrollbar-opacity: 0.3;
+    --el-scrollbar-background-color: var(--el-text-color-secondary);
+    --el-scrollbar-hover-opacity: 0.5;
+    --el-scrollbar-hover-background-color: var(--el-text-color-secondary);
+}
+.el-scrollbar__wrap {
+    overflow: auto;
+    height: 100%;
+}
+.aminui-side-split li {
+    cursor: pointer;
+    width: 65px;
+    height: 65px;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.aminui-side-split li.active {
+    background: #409EFF;
+}
+.aminui-side-split li span {
+    font-size: 18px;
+}
+.aminui-side-split li p {
+    margin-top: 5px;
+}
+
+.aminui-side {
+    display: flex;
+    flex-flow: column;
+    flex-shrink: 0;
+    width: 210px;
+    background: #fff;
+    box-shadow: 2px 0 8px 0 rgba(29, 35, 41, 0.05);
+    border-right: 1px solid #e6e6e6;
+    transition: width 0.3s;
+}
+
+.aminui-side.isCollapse {
+    width: 64px;
+}
+
+.el-container {
+    height: 100%;
+}
+.el-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    -ms-flex-preferred-size: auto;
+    flex-basis: auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    min-width: 0;
+}
+
+/* 侧边明细菜单导航**/
+.adminui-side-top {
+    border-bottom: 1px solid #ebeef5;
+    height: 50px;
+    line-height: 50px;
+}
+.adminui-side-top h2 {
+    padding: 0 20px;
+    font-size: 17px;
+    color: #3c4a54;
+	font-weight: bold;
+}
+.adminui-side-scroll {
+    overflow: auto;
+    overflow-x: hidden;
+    flex: 1;
+}
+.el-menu {
+    border: none !important;
+}
+.el-menu-item {
+    height: 56px;
+    line-height: 56px;
+    font-size: var(--el-menu-item-font-size);
+    color: var(--el-menu-item-font-color);
+    padding: 0 20px;
+    list-style: none;
+    cursor: pointer;
+    position: relative;
+    transition: border-color var(--el-transition-duration),background-color var(--el-transition-duration),color var(--el-transition-duration);
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+.el-menu-item.is-active {
+    background: #ecf5ff;
+    color: #409eff;
+}
+
+.el-menu-item i{
+	margin-right: 10px;
+}
+
+
+
+
+	
+	/* 右侧内容 */
+	.aminui-body {flex: 1;display: flex;flex-flow: column;}
+	
+	.adminui-topbar {height: 50px;border-bottom: 1px solid #ebeef5;background: #fff;box-shadow: 0 1px 4px rgba(0,21,41,.08);display: flex;justify-content:space-between;}
+	.adminui-topbar .left-panel {display: flex;align-items: center;}
+	.adminui-topbar .right-panel {display: flex;align-items: center;}
+	
+	.right-panel-search {display: flex;align-items: center;}
+	.right-panel-search > * + * {margin-left:10px;}
+	
+	.adminui-topbar .menu-collapse {height: 50px;width: 60px;padding: 0 20px;display: flex;align-items: center;cursor: pointer;}
+	.adminui-topbar .menu-collapse i {font-size: 16px;}
+	.adminui-topbar .menu-collapse:hover {background-image: linear-gradient(90deg, #d9ecff, transparent);}
+	
+	.adminui-tags {font-size: 12px;height:35px;background: #fff;border-bottom: 1px solid #e6e6e6;box-shadow: 0 1px 4px rgba(0,21,41,.08);}
+	.adminui-tags li {cursor: pointer;display: inline-block;float: left;height:34px;line-height: 34px;}
+	.adminui-tags li a {display: inline-block;padding:0 10px;width:100%;height:100%;color: #999;text-decoration:none;}
+	.adminui-tags li i {margin-left:10px;padding:3px;}
+	.adminui-tags li i:hover {background: #ff5722;color: #fff;}
+	.adminui-tags li:hover {background: #ecf5ff;}
+	.adminui-tags li.active {background: #09f;}
+	.adminui-tags li.active a {color: #fff;}
+	
+	.adminui-main {overflow: auto;background-color: #f6f8f9;flex: 1;}
