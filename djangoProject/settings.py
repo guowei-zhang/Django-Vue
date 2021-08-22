@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-%#eqrelw42i&0p_i=16z-y^a9f5=amweyps1z6cxm!*hum$vy7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -162,6 +162,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "vueDemo/dist/static/")
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'templates/static')
 
 
 # Default primary key field type
