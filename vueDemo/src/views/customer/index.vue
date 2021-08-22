@@ -120,7 +120,6 @@
 				param.append('searchTxt', searchTxt);
 				this.$Axios({
 					method:'post',
-					headers: {"Access-Control-Allow-Origin":"*"},
 					url:'http://101.34.160.91:8001/customer/search/',
 					data:param,
 				}).then(res=>{
