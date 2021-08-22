@@ -121,7 +121,7 @@
 				this.$Axios({
 					method:'post',
 					headers: {"Access-Control-Allow-Origin":"*"},
-					url:'http://101.34.160.91:8000/customer/search/',
+					url:'http://101.34.160.91:8001/customer/search/',
 					data:param,
 				}).then(res=>{
 						this.tableData = res.data.data;
@@ -135,7 +135,7 @@
 			getList(){
 				this.$Axios({
 					method:'post',
-					url:'http://127.0.0.1:8000/customer/lists/',
+					url:'http://101.34.160.91:8001/customer/lists/',
 				}).then(res=>{
 					this.tableData = res.data.data;
 					console.log(res.data);
@@ -166,7 +166,7 @@
 				}).then(() => {
 					this.$Axios({
 						method:'post',
-						url:'http://127.0.0.1:8000/customer/delete/',
+						url:'http://101.34.160.91:8001/customer/delete/',
 						data:param,
 					}).then(res=>{
 						console.log(res);

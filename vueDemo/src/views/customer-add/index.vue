@@ -113,7 +113,7 @@ export default {
 				if(valid){
 					this.$Axios({
 						method:'post',
-						url:'http://127.0.0.1:8000/customer/add/',
+						url:'http://101.34.160.91:8001/customer/add/',
 						data:Qs.stringify(this.ruleForm),
 					}).then(res=>{
 						if(res.data){
