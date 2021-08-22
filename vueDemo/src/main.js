@@ -18,7 +18,8 @@ app.config.globalProperties.$API = api;
 app.config.globalProperties.$Echarts = echarts;
 app.config.globalProperties.$Axios = axios;
 
-
+//传表单数据设置
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'; 
 
 
 app.use(store).use(router).mount('#app')

@@ -120,8 +120,8 @@
 				param.append('searchTxt', searchTxt);
 				this.$Axios({
 					method:'post',
-					headers: {"X-Requested-With": "XMLHttpRequest"},
-					url:'http://127.0.0.1:8000/customer/search/',
+					headers: {"Access-Control-Allow-Origin":"*"},
+					url:'http://101.34.160.91:8000/customer/search/',
 					data:param,
 				}).then(res=>{
 						this.tableData = res.data.data;
@@ -134,8 +134,8 @@
 			},
 			getList(){
 				this.$Axios({
-					method:'get',
-					url:'http://127.0.0.1:8000/customer/lists',
+					method:'post',
+					url:'http://127.0.0.1:8000/customer/lists/',
 				}).then(res=>{
 					this.tableData = res.data.data;
 					console.log(res.data);
@@ -157,7 +157,6 @@
 				this.multipleSelection = val;
 			},
 			handleDelete(id){
-				var searchTxt = this.searchTxt;
 				let param = new URLSearchParams();
 				param.append('id', id);
 				this.$confirm('此操作将永久删除该客户, 是否继续?', '提示', {
@@ -165,13 +164,12 @@
 					cancelButtonText: '取消',
 					type: 'warning'
 				}).then(() => {
-					
 					this.$Axios({
 						method:'post',
-						headers: {"X-Requested-With": "XMLHttpRequest"},
 						url:'http://127.0.0.1:8000/customer/delete/',
 						data:param,
 					}).then(res=>{
+						console.log(res);
 						this.getList();
 						this.$message({
 							type: 'success',

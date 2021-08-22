@@ -58,6 +58,7 @@
 <script>
 	
 import {useRouter} from 'vue-router'
+import Qs from 'qs'
 export default {
 	data() {
 		return {
@@ -116,33 +117,28 @@ export default {
 			param.append('id', id);
 			this.$Axios({
 				method:'post',
-				headers: {"X-Requested-With": "XMLHttpRequest"},
 				url:'http://127.0.0.1:8000/customer/get/',
 				data:param,
-			}).then(res=>{
+			}).then(res =>{
 				this.ruleForm = res.data.data[0];
 				console.log(res.data);
 			})
-			.catch(err=>{
+			.catch(err =>{
 				console.log(err);
 			})
 		},
 		saveCustomer() {
 			this.$refs.ruleForm.validate((valid) => {
 				if(valid){
-					let param = new URLSearchParams();
-					param.append('name', this.ruleForm.name);
-					param.append('phone', this.ruleForm.phone);
 					this.$Axios({
 						method:'post',
-						headers: {"X-Requested-With": "XMLHttpRequest"},
 						url:'http://127.0.0.1:8000/customer/add/',
-						data:param,
-					}).then(res=>{
+						data:Qs.stringify(this.ruleForm),
+					}).then(res =>{
 						this.tableData = res.data.data;
 						console.log(res.data);
 					})
-					.catch(err=>{
+					.catch(err =>{
 						console.log(err);
 					})
 				}
