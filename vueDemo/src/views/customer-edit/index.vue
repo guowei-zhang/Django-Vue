@@ -6,7 +6,7 @@
 				<el-card>
 					<el-row  :gutter="15" style="border-bottom: 1px solid #e6e6e6;padding-bottom: 10px;">
 						<el-col :lg="16">
-							<h2 style="font-size: 20px;font-weight: bolder;">添加客户</h2>
+							<h2 style="font-size: 20px;font-weight: bolder;">修改客户:{{ruleForm.name}}</h2>
 						</el-col>
 						<el-col :lg="8" :push="3">
 							<el-button type="primary" @click="saveCustomer()" icon="el-icon-s-claim">保存</el-button>
